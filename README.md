@@ -1,1 +1,3 @@
-GET OF SHELL
+simple shell
+Group project
+
