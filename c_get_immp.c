@@ -1,10 +1,5 @@
 #include "shell.h"
-/**
- * get_input - gets a line minus the newline
- * @info: parameter struct
- *
- * Return: bytes read
- */
+
 ssize_t get_input(info_t *info)
 {
 static char *buf;
@@ -40,14 +35,7 @@ return (_strlen(p));
 return (r);
 }
 
-/**
- * _get__line - gets the next line of input from STDIN
- * @info: parameter struct
- * @ptr: address of pointer to buffer, preallocated or NULL
- * @length: size of preallocated ptr buffer if not NULL
- *
- * Return: number of bytes read, or -1 on failure
- */
+
 int _get__line(info_t *info, char **ptr, size_t *length)
 {
 static char buf[BUF_SIZE];
@@ -83,14 +71,7 @@ return (s);
 }
 
 
-/**
- * get_environ - returns a copy of the string array containing
- *  our environment variables
- * @info: Structure containing potential arguments.
- * Used to maintain constant function prototype.
- *
- * Return: Pointer to a string array
- */
+
 char **get_environ(info_t *info)
 {
 if (!info->environ || info->env_changed)
@@ -101,13 +82,7 @@ info->env_changed = 0;
 return (info->environ);
 }
 
-/**
- * _get__env - gets the value of an environ variable
- * @info: Structure containing potential arguments. Used to maintain
- * @name: env var name
- *
- * Return: the value or NULL if not found
- */
+
 char *_get__env(info_t *info, const char *name)
 {
 list_t *node = info->env;
@@ -125,12 +100,6 @@ return (NULL);
 }
 
 
-/**
- * get_history_file - gets the path to the history file
- * @info: parameter struct
- *
- * Return: allocated string containing path to history file, or NULL on failure
- */
 char *get_history_file(info_t *info)
 {
 char *buf, *dir;

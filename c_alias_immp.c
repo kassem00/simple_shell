@@ -1,10 +1,5 @@
 #include "shell.h"
-/**
- * _atoi - converts a string to an integer
- * @s: the string to be converted
- *
- * Return: 0 if no numbers in string, converted number otherwise
- */
+
 int _atoi(char *s)
 {
 int i, sign = 1, flag = 0, output;
@@ -30,13 +25,7 @@ else
 output = result;
 return (output);
 }
-/**
- * unset_alias - removes an alias from the linked list
- * @info: parameter struct
- * @str: the string containing the alias to remove
- *
- * Return: 0 on success, 1 on error
- */
+
 int unset_alias(info_t *info, char *str)
 {
 char *p, c;
@@ -51,13 +40,7 @@ get_node_index(info->alias, node_starts_with(info->alias, str, -1)));
 *p = c;
 return (ret);
 }
-/**
- * set_alias - sets alias to string
- * @info: parameter struct
- * @str: the string alias
- *
- * Return: 0 on success, 1 on error
- */
+
 int set_alias(info_t *info, char *str)
 {
 char *p;
@@ -69,13 +52,7 @@ return (unset_alias(info, str));
 unset_alias(info, str);
 return (add_node_end(&(info->alias), str, 0) == NULL);
 }
-/**
- * _erratoi - converts a string to an integer
- * @s: the string to be converted
- *
- * Return: 0 if no numbers in string, converted number otherwise
- * -1 on error
- */
+
 int _erratoi(char *s)
 {
 int i = 0;

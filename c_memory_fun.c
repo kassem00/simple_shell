@@ -1,13 +1,6 @@
 #include "shell.h"
 
-/**
- * _memset - fills memory with a constant byte
- * @s: pointer to the memory area
- * @b: byte to fill *s with
- * @n: amount of bytes to be filled
- *
- * Return: pointer to the memory area s
- */
+
 char *_memset(char *s, char b, unsigned int n)
 {
 unsigned int i;
@@ -16,12 +9,7 @@ s[i] = b;
 return (s);
 }
 
-/**
- * ffree - frees a string of strings
- * @pp: string of strings
- *
- * Return: void
- */
+
 void ffree(char **pp)
 {
 char **a = pp;
@@ -32,14 +20,7 @@ free(*pp++);
 free(a);
 }
 
-/**
- * _realloc - reallocates a block of memory
- * @ptr: pointer to previous malloc'ated block
- * @old_size: byte size of previous block
- * @new_size: byte size of new block
- *
- * Return: pointer to the old block
- */
+
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 char *p;
@@ -59,24 +40,14 @@ free(ptr);
 return (p);
 }
 
-/**
- * sigintHandler - blocks ctrl-C
- * @sig_num: the signal number
- *
- * Return: void
- */
+
 void sigintHandler(__attribute__((unused)) int sig_num)
 {
 _puts("\n$ ");
 fflush(0);
 }
 
-/**
- * fork_term - forks and executes a process
- * @info: the parameter & return info struct
- *
- * Return: void
- */
+
 void fork_term(info_t *info)
 {
 pid_t child_pid;

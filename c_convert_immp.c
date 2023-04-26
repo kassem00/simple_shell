@@ -1,13 +1,5 @@
 #include "shell.h"
 
-/**
- * convert_number - convert a number to a string
- * @num: the number to convert
- * @base: the base to convert to
- * @flags: the conversion flags
- *
- * Return: a string representation of the number
- */
 char *convert_number(long int num, int base, int flags)
 {
 	static char *array;

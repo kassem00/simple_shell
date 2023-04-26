@@ -1,11 +1,5 @@
 #include "shell.h"
-/**
-* _unsetenv - Remove an environment variable
-* @info: Structure containing potential arguments. Used to maintain
-* constant function prototype.
-* @var: the string env var property
-* Return: 1 on delete, 0 otherwise
-*/
+
 int _unsetenv(info_t *info, char *var)
 {
 list_t *node = info->env;
@@ -28,13 +22,7 @@ i++;
 }
 return (info->env_changed);
 }
-/**
-* _setenv - Initialize a new environment variable or modify an existing one
-* @info: Structure containing potential arguments.
-* @var: The environment variable property.
-* @value: The environment variable value.
-* Return: 0 on success, or 1 on failure.
-*/
+
 int _setenv(info_t *info, char *var, char *value)
 {
 char *buf = NULL;

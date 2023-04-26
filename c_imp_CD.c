@@ -1,11 +1,6 @@
 #include "shell.h"
 
-/**
- * get_home_dir - returns the home directory of the user
- * @info: pointer to info_t struct
- *
- * Return: pointer to home directory string
- */
+
 char *get_home_dir(info_t *info)
 {
 char *dir = _get__env(info, "HOME=");
@@ -14,13 +9,7 @@ dir = _get__env(info, "PWD=");
 return (dir);
 }
 
-/**
- * change_dir - changes the current directory to the given path
- * @info: pointer to info_t struct
- * @path: pointer to directory path string
- *
- * Return: 0 on success, -1 on failure
- */
+
 int change_dir(info_t *info, char *path)
 {
 int chdir_ret = chdir(path);
@@ -32,21 +21,13 @@ _eputs(path), _eputchar('\n');
 return (chdir_ret);
 }
 
-/**
- * print_cwd - prints the current working directory
- * @cwd: pointer to current working directory string
- */
+
 void print_cwd(char *cwd)
 {
 _puts(cwd), _putchar('\n');
 }
 
-/**
- * _I_impcd - changes the current directory of the process
- * @info: Structure containing potential arguments. Used to maintain
- * constant function prototype.
- * Return: Always 0
- */
+
 int _I_impcd(info_t *info)
 {
 char buffer[1024];
@@ -82,11 +63,7 @@ set_pwd(info, getcwd(buffer, 1024));
 return (0);
 }
 
-/**
- * set_pwd - sets the PWD environment variable to the given path
- * @info: pointer to info_t struct
- * @buffer: pointer to directory path string
- */
+
 void set_pwd(info_t *info, char *buffer)
 {
 _setenv(info, "PWD", buffer);
